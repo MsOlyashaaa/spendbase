@@ -1,46 +1,21 @@
-# Getting Started with Create React App
+Потенційно вразливі місця з точки зору продуктивності для даної задачі можуть бути пов'язані з обробкою даних та рендерингом інтерфейсу. Наприклад:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. **Глибоке вкладення структури даних** може призвести до значного зростання часу обробки даних та затримок під час рендерингу. Це пов'язано з тим, що для обробки кожного елемента структури даних необхідно пройти через всі його батьківські елементи.
 
-## Available Scripts
+2. **Велика кількість елементів у кожній папці** також може спричинити збільшення часу рендерингу, особливо якщо всі елементи відображаються одразу. Це пов'язано з тим, що необхідно обробити та відобразити велику кількість даних.
 
-In the project directory, you can run:
+3. **Неефективний пошук**  може стати повільним при великій кількості елементів. Це пов'язано з тим, що необхідно переглянути всі елементи структури даних, щоб знайти потрібний.
 
-### `npm start`
+4. **Неоптимізовані операції фільтрації даних**: можуть призвести до погіршення продуктивності. Це пов'язано з тим, що необхідно обробити всі дані, щоб виконати фільтрацію.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Щоб запобігти цим можливим проблемам з продуктивністю, можна виконати втілити:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Ліниве завантаження** даних допоможе уникнути затримок у випадку великої кількості даних. При лінивому завантаженні дані завантажуються асинхронно при розгортанні папок, а не всі одразу.
 
-### `npm test`
+2. **Пагінація або порізка даних** допоможуть зменшити обсяг даних, які необхідно обробляти та рендерити одночасно. При пагінації або порізці даних відображається лише частина даних, а решта даних доступна за запитом.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Кешування даних** допоможе уникнути зайвих запитів до бека. При кешуванні даних, які вже були завантажені, зберігаються в локальній пам'яті, щоб їх можна було використовувати повторно.
 
-### `npm run build`
+4. **Оптимізований пошук** допоможе швидше знайти потрібний елемент. При оптимізації пошуку використовується більш ефективний алгоритм пошуку, наприклад, індексація або хеш-таблиці.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Загалом, оптимізація продуктивності полягає у збалансованому завантаженні даних, ефективному рендерингу та оптимізації операцій з даними для забезпечення швидкої та плавної роботи інтерфейсу.
