@@ -1,0 +1,28 @@
+.tree_view {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #5d5d5d;
+}
+
+.tree_child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3px 0 3px 20px;
+}
+
+.child_item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+}
+
+.child_item_folder:hover svg {
+    color: #478cf4;
+}
+
+.child_item_folder {
+    cursor: pointer;
+}
